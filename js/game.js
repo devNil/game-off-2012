@@ -186,8 +186,7 @@
     this.HEIGHT = 480.0;
     this.SCALE = 30;
     this.STORAGE = new Storage();
-    game = new Game();
-    this.STORAGE.setFinished(game.init);
+    
     l1 = new SimpleImageLoader("img/sprites.png", "spritesheet");
     l2 = new SimpleJSONLoader("img/map.json", "map");
     l3 = new SimpleJSONLoader("level/test.json", "test");
@@ -199,7 +198,11 @@
     l1.start();
     l2.start();
     l3.start();
-    return l4.start();
+    l4.start();
+    
+    game = new Game();
+    return this.STORAGE.setFinished(game.init);
+    
   });
 
   Game = (function() {
