@@ -186,7 +186,6 @@
     this.HEIGHT = 480.0;
     this.SCALE = 30;
     this.STORAGE = new Storage();
-    
     l1 = new SimpleImageLoader("img/sprites.png", "spritesheet");
     l2 = new SimpleJSONLoader("img/map.json", "map");
     l3 = new SimpleJSONLoader("level/test.json", "test");
@@ -199,10 +198,8 @@
     l2.start();
     l3.start();
     l4.start();
-    
     game = new Game();
     return this.STORAGE.setFinished(game.init);
-    
   });
 
   Game = (function() {
@@ -805,8 +802,13 @@
 
     SimpleImageLoader.prototype.start = function() {
       this.res = new Image();
-      this.res.onLoad = this.callback(this);
+      this.res.onLoad = this.load();
       return this.res.src = this.path;
+    };
+
+    SimpleImageLoader.prototype.load = function() {
+      console.log("SimpleImageLoader Loaded");
+      return this.callback(this);
     };
 
     return SimpleImageLoader;
