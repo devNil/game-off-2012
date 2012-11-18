@@ -746,7 +746,7 @@
       --this.counter;
       this.store[loader.getName()] = loader.getRessource();
       if (this.counter === 0) {
-        return this.finshed();
+        return setTimeout(this.finshed(), 20);
       }
     };
 
