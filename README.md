@@ -22,5 +22,5 @@ The game starts after you cloned your first entity
 * nodejs
 * CoffeeScript (to convert caffeine into code)
 * Bootstrap
-* Some js-libs (Zepto.js; animation.js; impress.js)
+* Some js-libs (Zepto.js; impress.js)
 * Travis
